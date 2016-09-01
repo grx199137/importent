@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style>
+        *{
+        	margin: 0px;
+        	padding: 0px;
+        }
+        .list li{
+        	list-style: none;
+        	float: left;
+        	border: 1px solid gray;
+        	width: 30px;
+        	height: 20px;
+        	line-height: 20px;
+        	text-align: center;
+        	background-color: yellow;
+        }
+        .list .active{
+        	background-color: red;
+        }
+    </style>
+</head>
+<body>
+	<img src="images/0.jpg" alt="">
+	<ul class="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script>
+	    var oLi = document.querySelectorAll("li");
+        var oImg = document.querySelector("img");
+        var arrImg = [
+                      "images/0.jpg",
+                      "images/1.jpg",
+                      "images/2.jpg",
+                      "images/3.jpg",
+                      "images/4.jpg"
+                                    ];
+        for(var i=0;i<oLi.length;i++){
+            oLi[i].onclick = (function(elem){
+                return function(){
+                    var src = arrImg[elem];
+                    oImg.src = src;
+                    addClass(this,"active");
+                    var sibs = siblings(this);
+                    for(var j=0;j<sibs.length;j++){
+                        removeClass(sibs[j],"active")
+                    }
+                }
+            })(i)
+        }
+
+        function addClass(objeck,str){
+            if(objeck.className){
+        	    var oName = objeck.className;
+        	    var newName = oName + " " + str ;
+        	    objeck.className = newName ;
+            }else{
+        	    objeck.className = str ; 
+            }       	
+        }
+
+
+        function removeClass(objeck,str){
+            var oName = objeck.className;
+            var arrName = oName.split(" ");
+            var newArr = [];
+            for(var i=0;i<arrName.length;i++){
+                if(arrName[i]!=str){
+                    newArr.push(arrName[i]);
+                }
+            }
+            var newStr = newArr.join(" ");
+            objeck.className = newStr;
+        }
+
+        function siblings(objeck){
+            var sibs = objeck.parentNode.children;
+            var newArr = [];
+            for(var i=0;i<sibs.length;i++){
+                if(sibs[i]!=objeck){
+                    newArr.push(sibs[i]);
+                }
+            }
+            return newArr ;
+        }
+
+	</script>
+</body>
+</html>

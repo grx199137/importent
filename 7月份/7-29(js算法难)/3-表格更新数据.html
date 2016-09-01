@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style/bootstrap.css">
+</head>
+<body>
+	<button id="age">按年龄排序</button>
+	<button id="achievement">按成绩排序</button>
+	<table class="table table-striped table-hover table-bordered">
+		<thead>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>成绩</th>
+		</thead>
+		<tbody></tbody>
+	</table>
+	<script src="script/jquery.js"></script>
+	<script>
+
+		$("#age").click(function(){
+			ageSort(arr);
+			showData(arr);
+		});
+		$("#achievement").click(function(){
+			achievement(arr);
+			showData(arr);
+		})
+
+		var arr=[
+			{
+				name: "盖伦",
+				age : 21,
+				achievement : 66
+			},
+			{
+				name: "卡特",
+				age : 25,
+				achievement : 100
+			},
+			{
+				name: "男枪",
+				age : 39,
+				achievement : 70
+			},
+			{
+				name: "火男",
+				age : 100,
+				achievement : 89
+			},
+			{
+				name: "女警",
+				age : 26,
+				achievement : 90
+			},
+		];
+		showData(arr);
+		
+		function objectSort(array,member){
+			var len = array.length;
+			for(var i=len;i>=2;i--){
+				for(var j=0;j<i-1;j++){
+					if(array[j][member]>array[j+1][member]){
+						var temp=array[j];
+						array[j]=array[j+1];
+						array[j+1]=temp;
+					};
+				};
+			};
+		};
+
+		function ageSort(array){
+			objectSort(arr,"age");
+		};
+		function achievement(array){
+			objectSort(arr,"achievement");
+		};
+		
+		function showData(array){
+			$("table tbody").empty();
+			for(var i in array){
+				var $tr = $("<tr>");
+				for(var j in array[i]){
+					var text = array[i][j];
+					var $td = $("<td>");
+					$td.text(text);
+					$tr.append($td);
+				}
+				$("table tbody").append($tr);
+			}
+			
+		}
+	</script>
+</body>
+</html>

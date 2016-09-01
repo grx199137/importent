@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		body{
+			background-color: red;
+		}
+		.nav li{
+			list-style: none;
+			float: left;
+			border: 1px solid blue;
+			text-align: content; 
+		}
+		#btn{
+			display: none;
+		}
+		@media screen and (max-width: 640px){
+			body{
+				background-color: green;
+			}
+			.nav li{
+			width: 100%;
+			display: none;
+			clear: both;
+			}
+			#btn{
+				display: block;
+			}
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">显示/隐藏</button>
+	<ul class="nav">
+		<li>首页</li>
+		<li>电影</li>
+		<li>音乐</li>
+		<li>动画</li>
+		<li>视频</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("#btn").click(function(){
+			$(".nav li").slideToggle(300)
+		})
+		$(window).resize(function(){
+			if($(this).width()<640){
+				$(".nav li").hide();
+			}else{
+				$(".nav li").show();
+			}
+		})
+	</script>
+</body>
+</html>

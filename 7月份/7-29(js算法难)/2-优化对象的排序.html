@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arr=[
+			{
+				name: "盖伦",
+				age : 21,
+				achievement : 66
+			},
+			{
+				name: "卡特",
+				age : 25,
+				achievement : 100
+			},
+			{
+				name: "男枪",
+				age : 39,
+				achievement : 70
+			},
+			{
+				name: "火男",
+				age : 100,
+				achievement : 89
+			},
+			{
+				name: "女警",
+				age : 26,
+				achievement : 90
+			},
+		];
+
+		function objectSort(array,member){
+			var len = array.length;
+			for(var i=len;i>=2;i--){
+				for(var j=0;j<i-1;j++){
+					if(array[j][member]>array[j+1][member]){
+						var temp = array[j];
+						array[j] = array[j+1];
+						array[j+1] = temp;
+					}
+				}
+			}
+		}
+
+		function setage(array){
+			objectSort(arr,"age");
+		}
+		function achievement(array){
+			objectSort(arr,"achievement");
+		}
+		setage(arr);
+		console.log(arr)
+	</script>
+</body>
+</html>

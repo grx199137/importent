@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<input type="text" id="txt">
+		<input type="button" value="添加" id="btn">
+	</form>
+	<ul class="list">
+		<li>香蕉</li>
+		<li>苹果</li>
+		<li>鸭梨</li>
+	</ul>
+	<script>
+       	var oBtn = document.querySelector("#btn");
+       	var oTxt = document.querySelector("#txt");
+       	var oList = document.querySelector(".list");
+       	oBtn.onclick=function(){
+       		var value = oTxt.value;
+       		var oText = document.createTextNode(value);
+       		var oLi = document.createElement("li");
+       		oLi.appendChild(oText);
+       		oList.appendChild(oLi);
+       	}
+	</script>
+</body>
+</html>

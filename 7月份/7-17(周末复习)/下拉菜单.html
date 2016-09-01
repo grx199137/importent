@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    *{
+	    	margin: 0px;
+	    	padding: 0px;
+	    }
+        #nav>li{
+        	list-style: none;
+        	float: left;
+        	border: 1px solid gray;
+        	width: 100px;
+        	height: 20px;
+        	text-align: center;
+        	background-color: red;
+        }
+        #nav .num-list li{
+        	list-style: none;
+        }
+	</style>
+</head>
+<body>
+	<ul id="nav">
+		<li>
+			<a href="">服装</a>
+			<ul class="num-list">
+				<li>上衣</li>
+				<li>裤子</li>
+				<li>裙子</li>
+			</ul>
+		</li>
+		<li>
+			<a href="">价格</a>
+			<ul class="num-list">
+				<li>100</li>
+				<li>200</li>
+				<li>300</li>
+			</ul>
+		</li>
+		<li>
+			<a href="">品牌</a>
+			<ul class="num-list">
+				<li>李宁</li>
+				<li>特步</li>
+				<li>耐克</li>
+			</ul>
+		</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+        $("#nav li").mouseenter(function(){       	
+        	$(this).find("li").slideDown(500);
+        });
+         $("#nav li").mouseleave(function(){
+        	$(this).find("li").slideUp(500);
+        });
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+            .active{
+            	background-color: red;
+
+            }
+	</style>
+</head>
+<body>
+	<span id="days"></span>日
+	<span id="hours"></span>:
+	<span id="minutes"></span>:
+	<span id="seconds"></span>
+	<button>开始抢购</button>
+	<script src="script/jquery.js"></script>
+	<script>
+        var targetTime = "2016-08-01 15:04:01";
+        var getTime = new Date(targetTime).getTime();
+        function setTime(){
+            var newTime = new Date().getTime();
+            var result = getTime-newTime;
+            var days = Math.floor(result/(24*60*60*1000));
+            var other1= result%(24*60*60*1000);
+            var hours = Math.floor(other1/(60*60*1000));
+            var other2 = other1%(60*60*1000);
+            var minutes = Math.floor(other2/(60*1000));
+            var other3 = other2%(60*1000);
+            var seconds = Math.floor(other3/1000);
+            $("#days").text(days);
+            $("#hours").text(hours);
+            $("#minutes").text(minutes);
+            $("#seconds").text(seconds);
+            if(days==0&&hours==0&&minutes==0&&seconds==0){
+                clearInterval(t);
+                $("button").addClass("active");
+            }
+        };
+        setTime();
+        var t=setInterval(setTime,1000);
+	</script>
+</body>
+</html>

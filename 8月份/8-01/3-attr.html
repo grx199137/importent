@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// var obj = {
+		// 	name : "mimi"
+		// }
+		// function attr(object,attrName){
+		// 	return object[attrName];
+		// };
+		// console.log(attr(obj,"name"));
+
+
+		var obj = {
+			age : "2"
+		};
+		function attr(object){
+			if(arguments.length===2){
+				return object[arguments[1]];
+			}else if(arguments.length===3){
+				object[arguments[1]]=arguments[2]
+			}
+		}
+		attr(obj,"age",100)
+		console.log(obj.age)
+		
+		
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			transition:transform .5s linear 1s;
+		}
+		.move{
+			transform:translateX(50px);
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<script src="script/jquery.js"></script>
+	<script>
+		$(".box").click(function(){
+			$(this).toggleClass("move")
+		})
+	</script>
+</body>
+</html>

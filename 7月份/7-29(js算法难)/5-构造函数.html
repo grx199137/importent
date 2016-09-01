@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//构造函数/模拟类和实例
+		//Cat就好比类,var cat1=new Cat("mimi");好比实例,类可以创建好多个实例
+		//构造函数一般首字母大写
+		function Cat(name){
+			this.name=name;
+			this.sayName=function(){
+				console.log("我是"+this.name);
+			}
+		}
+
+		var cat1 = new Cat("miaomiao");
+		var cat2 = new Cat("haha");
+		cat1.sayName();
+		cat2.sayName();
+	</script>
+</body>
+</html>

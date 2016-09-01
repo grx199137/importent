@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		@keyframes myanim{
+			100%{
+				transform:rotateY(360deg);
+			}
+		}
+		.big-box{
+			width: 300px;
+			height: 400px;
+			border: 1px solid gray;
+			margin: 0 auto;
+			padding: 20px;
+			perspective:300px;
+		}
+		.box{
+			width: 250px;
+			height: 150px;
+			background-color: red;
+			animation:myanim 4s linear infinite;
+			/*transition:transform 1s linear;*/			
+		}
+		/*.box:hover{
+			transform:rotateY(180deg);
+		}*/
+	</style>
+</head>
+<body>
+	<div class="big-box">
+		<div class="box">
+			<h1>3D效果</h1>
+		</div>
+	</div>
+</body>
+</html>

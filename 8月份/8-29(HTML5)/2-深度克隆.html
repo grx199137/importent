@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var obj1 = {
+			"name":"xiaoming",
+			"age":"12",
+			"sex":["lili","female"]
+		}
+		//深度克隆
+		function clone(option){
+			if(option instanceof Array){
+				var newOption = [];
+			}else if(option instanceof Object){
+				var newOption = {};
+			}
+			for(var key in option){
+				if(typeof(option[key])=="object"){
+					newOption[key] = clone(option[key])
+				}else{
+					newOption[key] = option[key];
+				}
+			}
+			return newOption
+		}
+
+		var obj2 = clone(obj1);
+		obj2.sex[0] = "试试";
+		console.log(obj1)
+		console.log(obj2)
+		
+	</script>
+</body>
+</html>

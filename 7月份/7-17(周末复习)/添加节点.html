@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<input type="text" id="txt">
+		<input type="button" value="添加" id="btn">
+	</form>
+	<ul class="num">
+		<li>香蕉</li>
+		<li>苹果</li>
+		<li>鸭梨</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+        $("#btn").click(function(){
+        	var value = $("#txt").val();
+        	var li = "<li>" + value + "</li>"
+        	$(".num").append(li);
+        	
+        });
+	</script>
+</body>
+</html>

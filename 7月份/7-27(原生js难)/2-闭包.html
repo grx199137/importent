@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		function outFun(){
+			var x=10;
+			var y=10;
+			function inFun(){
+			var m=20;
+			console.log(x);
+			}
+			return inFun;
+		}
+
+		var fun = outFun();  //此时inFun负值给一个变量，占用内存outFun里的内容不被销毁
+	</script>
+</body>
+</html>

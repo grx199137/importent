@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+        var cat = {
+        	name : "miaomiao",
+        	count : function(num1,num2,sign){
+        		var result = 0 ;
+        		switch(sign){
+        			case "+" : result = num1 + num2 ; break ;
+        			case "-" : result = num1 - num2 ; break ;
+        			case "*" : result = num1 * num2 ; break ;
+        			case "/" : result = num1 / num2 ; break ;
+        		}
+        		var content = Number(num1) +sign+ Number(num2) + "计算的结果是" +result;
+        		alert(content);
+        	}
+        }
+        cat.count(1,2,"+")
+	</script>
+</body>
+</html>

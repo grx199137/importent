@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style>
+        *{
+        	margin: 0px;
+        	padding: 0px;
+        }
+        .box img{
+        	width: 350px;
+        }
+        .pic-box img{
+        	position: absolute;
+        }
+    </style>
+</head>
+<body>
+	<div class="box">
+		<img src="images/0.jpg" alt="">
+		<img src="images/1.jpg" alt="">
+		<img src="images/2.jpg" alt="">
+	</div>
+	<div class="pic-box"></div>
+	<script src="script/jquery.js"></script>
+	<script>
+        $(".box img").mouseenter(function(){
+        	var src = $(this).attr("src");
+        	var img = $("<img>");
+        	img.attr("src",src);
+        	$(".pic-box").append(img);
+        }).mouseleave(function(){
+        	$(".pic-box img").remove();
+        }).mousemove(function(e){
+        	var x = e.pageX;
+        	var y = e.pageY;
+        	$(".pic-box img").css({"top":y+10,"left":x+10});
+
+        });
+	</script>
+</body>
+</html>

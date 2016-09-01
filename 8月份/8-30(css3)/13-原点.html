@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#list li{
+			width: 50px;
+			height: 50px;
+			border: 1px solid gray;
+			background-color: blue;
+			list-style: none;
+			position: relative;
+			overflow: hidden;
+		}
+		#list li .box{
+			width: 50px;
+			height: 50px;
+			background-color: yellow;
+			position: absolute;
+			top: 0px;
+			left:0px;
+			transform-origin:left bottom;
+			transition:transform 1s linear;
+			transform:rotate(90deg);
+			z-index: 555;
+		}
+		#list li .move{
+			transform:rotate(0deg);
+		}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li>
+			<a href="">1</a>
+			<div class="box">a</div>
+		</li>
+		<li>
+			<a href="">2</a>
+			<div class="box">b</div>
+		</li>
+		<li>
+			<a href="">3</a>
+			<div class="box">c</div>
+		</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("#list li").hover(function(){
+			$(this).find(".box").toggleClass("move")
+		})
+	</script>
+</body>
+</html>

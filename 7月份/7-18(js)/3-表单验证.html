@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+        .green{
+        	color: green;
+        }
+        .red{
+        	color: red;
+        }
+	</style>
+</head>
+<body>
+	<form action="">
+		<label for="">电话</label>
+		<input type="text" id="txt">
+	</form>
+	<p class="info"></p>
+	<script src="script/jquery.js"></script>
+	<script>
+	 
+        var re = /^[0-9]{11}$/;
+        $("#txt").blur(function(){
+            var value = $(this).val();
+            var result = re.test(value);
+            $(".info").html(fun(result));
+        });
+
+        function fun(elem){
+            var rightSpan = "<span class='green'>输入正确</span>";
+            var wrongSpan = "<span class='red'>请重新输入</span>";
+            if(elem){                                           
+                return rightSpan;
+            }else{
+                 return wrongSpan;     
+            }
+        }
+	</script>
+</body>
+</html>

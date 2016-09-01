@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+    .box{
+    	width: 650px;
+    	height: 420px;
+    	overflow: hidden;
+    }
+    .box .inside-box{
+    	width: 3282px;
+    	height: 420px;
+    	float: left;
+    }
+    #num-list li{
+    	list-style: none;
+    	float: left;
+    	width: 100px;
+    	height: 30px;
+    	border: 1px solid gray;
+    	text-align: center;
+    	margin-top:10px;
+    	line-height: 30px;
+    }
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inside-box">
+			<img src="images/0.jpg" alt="">
+			<img src="images/1.jpg" alt="">
+			<img src="images/2.jpg" alt="">
+			<img src="images/3.jpg" alt="">
+			<img src="images/4.jpg" alt="">
+		</div>
+	</div>
+	<ul id="num-list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+        $("#num-list li").click(function(){
+        	var index = $(this).index();
+        	var margin = -650 * index ;
+        	$(".inside-box").animate({"margin-left":margin},2000);
+        });
+	</script>
+</body>
+</html>

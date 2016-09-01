@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<input type="text" id="num1">+
+		<input type="text" id="num2">=
+		<input type="text" id="result">
+		<input type="button" id="btn" value="计算">
+	</form>
+	<script>
+        var oNum1 = document.querySelector("#num1");
+        var oNum2 = document.querySelector("#num2");
+        var oResult = document.querySelector("#result");
+        var oBtn = document.querySelector("#btn");
+
+        oBtn.onclick= function(){
+        	var resultNum=Number(oNum1.value) + Number(oNum2.value);
+        	oResult.value = resultNum;
+        }
+	</script>
+</body>
+</html>

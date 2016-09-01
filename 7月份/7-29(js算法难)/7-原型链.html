@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		function Cat(name){
+			this.name;
+		}
+
+
+		Cat.prototype.sayname=function(){
+			console.log("我是miaomiao");
+		}
+		Cat.prototype.color=function(){
+			console.log("我是11")
+		}
+
+		function WhiteCat(name){
+			this.name=name
+		}
+		WhiteCat.prototype=new Cat();
+		WhiteCat.prototype.color="red";
+		WhiteCat.prototype.showcolor=function(){
+			console.log("我是"+this.color+"颜色");
+		}
+
+		var WhiteCat= new WhiteCat("haha");
+		WhiteCat.sayname()
+	</script>
+</body>
+</html>

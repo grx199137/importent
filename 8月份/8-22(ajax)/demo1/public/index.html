@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+	<button id="get">get</button>
+	<button id="post">post</button>
+	<button id="ajax">ajax</button>
+</body>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$("#get").click(function(){
+			$.get("/login",{"username":"xiaoming","password":"123456"},function(data){
+				alert(data)
+			})
+		})
+		$("#post").click(function(){
+			$.post("/home",{"username":"xiaozhang","password":"111111"},function(data){
+				alert(data)
+			})
+		})
+
+		//ajax方法
+		$("#ajax").click(function(){
+			$.ajax({
+				"method":"get",
+				"url":"/login",
+				"data":{"username":"xiaoming","password":"123456"}
+			}).done(function(data){
+				alert(data)
+			}).fail(function(){
+				alert("请求失败")
+			})
+		})
+	</script>
+</html>

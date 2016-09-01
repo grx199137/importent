@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>1<span class="list">删除</span></li>
+		<li>2<span class="list">删除</span></li>
+		<li>3<span class="list">删除</span></li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+        $(".list").click(function(){
+        	var result = confirm("是否删除数据？");
+        	if(result){
+        		$(this).parent().remove();
+        	}
+        })
+	</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+extends gongyong.jade
+
+block content
+	link(rel="stylesheet", href="style/table.css")
+	h1 我的表格
+	table
+		thead
+			th 姓名
+			th 年龄
+			th 成绩
+		tbody
+			-for(var i=0;i<table.length;i++)
+				tr
+					td=table[i].name
+					td=table[i].age
+					td=table[i].achievement

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//对象的方法
+		var arr = ["卡特","盖伦","火男","盖伦","皇子","鳄鱼"]
+		
+
+		function nop(){
+			var obj = {};
+			var newArr = [];
+			for(var i=0;i<arr.length;i++){
+				if(obj[arr[i]]===undefined){
+					obj[arr[i]] =2;					
+					newArr.push(arr[i]);
+				}
+			}
+			return newArr;
+		}
+		console.log(nop(arr));
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<input type="button" id="btn" value="按钮">
+	<input type="button" class="btn1" value="按钮">
+	<input type="button" class="btn1" value="按钮">
+	<input type="button" class="btn1" value="按钮">
+	<script src="script/jquerys.js"></script>
+	<script>
+
+		
+		// var btn = new $("#btn");
+		// btn.click(function(){
+		// 	alert("hello");
+		// });
+		// btn.click(function(){
+		// 	console.log("mimi")
+		// })
+
+
+
+
+		//class时this.dom是个数组，遍历就给分别添加事件
+		function $(selector){
+			this.dom= document.querySelectorAll(selector);
+		};
+		$.prototype.click= function(fun){
+			for(var i=0;i<this.dom.length;i++){				
+			this.dom[i].addEventListener("click",fun,false);
+			}
+		};
+		var btn = new $(".btn1");
+		btn.click(function(){
+			alert("hello");
+		});
+		btn.click(function(){
+			console.log("mimi")
+		})
+
+
+	</script>
+</body>
+</html>

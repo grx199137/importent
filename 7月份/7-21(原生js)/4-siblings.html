@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li class="list"></li>
+		<li></li>
+		<li></li>
+	</ul>
+    <script>
+        var oLi = document.querySelector(".list");
+
+        function siblings(elem){
+            var sibs = elem.parentNode.children;
+            var arr = [];
+            for(var i=0;i<sibs.length;i++){
+                if(sibs[i]!=elem){
+                    arr.push(sibs[i])
+                }
+            }
+            return arr
+        }
+        var result=siblings(oLi)
+        console.log(result)
+
+    </script>
+</body>
+</html>

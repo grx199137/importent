@@ -1,0 +1,7 @@
+{
+  "name": "my-first",
+  "age": "0.0.0",
+  "devDependencies": {
+    "mongodb": "^2.2.5"
+  }
+}

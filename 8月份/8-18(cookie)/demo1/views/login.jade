@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    title Document
+body
+    form.myform(action="/login" method="post")
+        label 用户
+        input.username(name="username")
+        label 密码
+        input.password(name="password")
+        button.denglu 登陆
+        span #{info}
+    script(src="script/jquery.js")
+    script(src="script/login.js")

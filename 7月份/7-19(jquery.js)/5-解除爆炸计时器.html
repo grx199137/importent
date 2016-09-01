@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span class="info">爆炸</span>
+	<input type="button" value="解除爆炸" id="btn">
+	<script src="script/jquery.js"></script>
+	<script>
+        function fun(){
+        	$(".info").text("砰砰！！");
+        }
+        var s =setTimeout(fun,2000);
+        $("#btn").click(function(){
+        	clearTimeout(s);
+        });
+	</script>
+</body>
+</html>

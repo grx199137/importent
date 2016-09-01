@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<input type="button" value="-" id="but">
+		<span id="txt">0</span>
+		<input type="button" value="+" id="btn">
+	</form>
+	<script src="script/jquery.js"></script>
+	<script>
+	    $("#btn").click(function(){
+	    	var num = Number($("#txt").text());
+	    	// var result = num + 1 ;       //也可以实现但用++更简便
+	    	++num;
+	    	$("#txt").text(num);	
+	    });
+	    $("#but").click(function(){
+	    	var num = Number($("#txt").text());
+	    	if(num>0){
+	    	    --num;
+	    	    $("#txt").text(num);
+	    	};
+	    });
+	</script>
+</body>
+</html>

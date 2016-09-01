@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul class="list">
+		<li class="del">1</li>
+		<li class="del">2</li>
+		<li class="del">3</li>
+		<li class="del">4</li>
+		<li class="del">5</li>
+	</ul>
+	<script>
+
+        var oList = document.querySelector(".list");
+
+        oList.addEventListener("click",function(event){
+            console.log(event.target)
+        },false)
+	</script>
+</body>
+</html>

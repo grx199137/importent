@@ -1,0 +1,20 @@
+doctype html
+html(lang='en')
+    head
+        title Jade
+        link(rel="stylesheet" href="bootstrap.min.css")
+    body
+        table.table.table-bordered.table-hover
+            thead
+                th 姓名
+                th 年龄
+                th 性别
+                th 删除
+                th 修改
+            tbody
+                -for(var i=0;i<data.length;i++)
+                    tr
+                        td=data[i].name
+                        td=data[i].age
+                        td=data[i].sex
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		@keyframes myanima{
+			50%{
+				width: 200px;
+			}
+			60%{
+				background-color: blue;
+			}
+			70%{
+				transform:rotate(90deg);
+			}
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin: 150px auto;
+			animation:myanima 5s linear;
+		}
+		.box:hover{
+			animation-play-state:paused;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

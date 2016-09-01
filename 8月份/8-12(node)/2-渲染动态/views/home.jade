@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+	meta(charset="UTF-8")
+	title #{title}
+	link(rel="stylesheet", href="style/jade.css")
+body
+	h1 这是我的第一个动态页面
+	ul
+		-for(var i=0;i<nav.length;i++)  //jade模板中js语句前要加减号
+			li
+				a(href=nav[i].url)=nav[i].title
+	

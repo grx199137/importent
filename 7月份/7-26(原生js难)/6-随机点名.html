@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="抽奖" id="btn">
+	<script>
+		//用对象的方法
+       	var personArr = [
+       	              		"卡特",
+       	              		"火男",
+       	              		"皇子",
+       	              		"鳄鱼",
+       	              		"大树",
+       	              		"龙龟",
+       	              		"男枪",
+       	              		"千珏"
+       	              				];
+       	var oBtn =document.querySelector("#btn");
+              var obj = {};
+              oBtn.onclick=setPerson;
+              function setPerson(){
+                     var num =Math.floor(Math.random()*personArr.length);
+                     var person = personArr[num];
+                     if(obj[person]===undefined){
+                            obj[person]=1;
+                            console.log(person);
+                     }else if(getObj(obj)<personArr.length){
+                            setPerson();
+                     }
+              }
+
+              function getObj(x){
+                     var s =0;
+                     for(var i in x){
+                            ++s;
+                     }
+                     return s;
+              }
+		
+	</script>
+</body>
+</html>

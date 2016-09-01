@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+        *{
+        	margin: 0px;
+        	padding: 0px;
+        }
+        .box{
+        	width: 650px;
+        	height: 420px;
+        	overflow: hidden;
+        }
+        .box ul{
+        	width: 3250px;
+        }
+        .box ul li{
+        	list-style: none;
+        	float: left;
+        }
+        .num li{
+        	list-style: none;
+        	float: left;
+        	border: 1px solid gray;
+        	line-height: 20px;
+        	width: 30px;
+        	text-align: center;
+        }
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li><img src="images/0.jpg" alt=""></li>
+			<li><img src="images/1.jpg" alt=""></li>
+			<li><img src="images/2.jpg" alt=""></li>
+			<li><img src="images/3.jpg" alt=""></li>
+			<li><img src="images/4.jpg" alt=""></li>
+		</ul>
+	</div>
+	<ul class="num">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+        var n = 0 ;
+        function fun(){
+            ++n;
+            var marLeft= n * -650 ;
+            $(".box ul").animate({marginLeft:marLeft},500);
+            n = n==4 ? 0 : n
+        };
+        fun();
+        setInterval(fun,1000);
+        $(".num li").click(function(){
+            var index = $(this).index();
+            n = index;
+            var marLeft = index * -650 ;
+            $(".box ul").animate({marginLeft:marLeft},500)
+        })
+	</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>ajax</h1>
+	<button id="btn1">get</button>
+	<button id="btn2">post</button>
+	<script>
+		//同步，阻塞
+		// alert("hello");
+		// console.log("hello lucy")
+		//异步,非阻塞
+		// setTimeout(function(){
+		// 	console.log("hello")
+		// },3000)
+		// console.log("hello mimi")
+
+		// var xhr = new XMLHttpRequest();
+		// xhr.open("get","/login")
+		// xhr.send();
+		// xhr.onreadystatechange = function(){
+		// 	if(xhr.readyState == 4 && xhr.status == 200){
+		// 		alert(xhr.responseText)
+		// 	}
+		// }
+
+		//点击按妞请求数据
+		// var oBtn1 = document.querySelector("#btn1");
+		// var oBtn2 = document.querySelector("#btn2");
+
+		// oBtn1.onclick= function(){
+		// 	var xhr = new XMLHttpRequest();
+		// 	xhr.open("get","/login")
+		// 	xhr.send();
+		// 	xhr.onreadystatechange = function(){
+		// 		if(xhr.readyState == 4 && xhr.status == 200){
+		// 			alert(xhr.responseText)
+		// 		}
+		// 	}	
+		// }
+		// oBtn2.onclick= function(){
+		// 	var xhr = new XMLHttpRequest();
+		// 	xhr.open("post","/home")
+		// 	xhr.send();
+		// 	xhr.onreadystatechange = function(){
+		// 		if(xhr.readyState == 4 && xhr.status == 200){
+		// 			alert(xhr.responseText)
+		// 		}
+		// 	}	
+		// }
+
+		//封装请求的方法
+		var oBtn1 = document.querySelector("#btn1");
+		var oBtn2 = document.querySelector("#btn2");
+		oBtn1.onclick = function(){
+			myAjax("get","/login",function(data){
+				alert(data)
+			})
+		}
+		oBtn2.onclick = function(){
+			myAjax("post","/home",function(data){
+				alert(data)
+			})
+		}
+		function myAjax(method,src,next){
+			var xhr = new XMLHttpRequest();
+			xhr.open(method,src)
+			xhr.send();
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState == 4 && xhr.status == 200){
+					next(xhr.responseText)
+				}
+			}
+
+		}
+	</script>
+</body>
+</html>

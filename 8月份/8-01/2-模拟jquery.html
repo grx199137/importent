@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" id="btn" value="按钮特殊">
+	<input type="button" class="btn1" value="按钮">
+	<input type="button" class="btn1" value="按钮">
+	<input type="button" class="btn1" value="按钮">
+	<script>
+
+		function $(selector){
+			return $.prototype.init(selector);
+		}
+
+		$.prototype= {
+			init : function(selector){
+				this.dom= document.querySelectorAll(selector);
+				return this;
+			},
+			click : function(fun){
+				for(var i=0;i<this.dom.length;i++){
+					this.dom[i].addEventListener("click",fun,false);
+				}
+			}
+		}
+		$("#btn").click(function(){
+			alert("hello");
+		});
+
+		$(".btn1").click(function(){
+			alert("hello");
+		});
+		//$(".btn1")函数的返回值是个jquery库里对象包裹的dom对象
+	</script>
+</body>
+</html>

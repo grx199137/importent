@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+    .box{
+    	width: 50px;
+    	height: 50px;
+    	background-color: red;
+    }
+	</style>
+</head>
+<body>
+	<input type="button" value="显示" id="show">
+	<input type="button" value="隐藏" id="hide">
+	<input type="button" value="渐入" id="fadeIn">
+	<input type="button" value="渐出" id="fadeOut">
+	<input type="button" value="下拉" id="slideDown">
+	<input type="button" value="上卷" id="slideUp">
+	<input type="button" value="自定义动画" id="animate">
+	<div class="box"></div>
+	<script src="script/jquery.js"></script>
+	<script>
+	    $("#show").click(function(){
+	    	$(".box").show(500);
+	    });
+	    $("#hide").click(function(){
+	    	$(".box").hide(500);
+	    });
+	    $("#fadeIn").click(function(){
+	    	$(".box").fadeIn(500);
+	    });
+	    $("#fadeOut").click(function(){
+	    	$(".box").fadeOut(500);
+	    });
+	      $("#slideUp").click(function(){
+	    	$(".box").slideUp(500);
+	    });
+	    $("#slideDown").click(function(){
+	    	$(".box").slideDown(500);
+	    });
+	      $("#animate").click(function(){
+	    	$(".box").animate({"margin-top":"50px","margin-left":"100px"},500);
+	    });
+	</script>
+
+</html>

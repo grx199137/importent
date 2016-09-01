@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script>
+        var oLi = document.querySelectorAll("li");
+        for(var i=0;i<oLi.length;i++){
+            oLi[i].onclick=function(){
+                var ind = index(this);
+                alert(ind);
+            }
+        }
+
+        function index(elem){
+            var sibs= elem.parentNode.children;
+            for(var i=0;i<sibs.length;i++){
+                if(sibs[i]==elem){
+                    return i;
+                }
+            }
+        }
+	</script>
+</body>
+</html>

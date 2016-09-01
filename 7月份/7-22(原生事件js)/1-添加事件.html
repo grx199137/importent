@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn1">
+	<input type="button" value="按钮2" id="btn2">
+	<input type="button" value="按钮3" id="btn3">
+	<input type="button" value="移除" id="remove">
+	<script>
+
+        var oBtn1 = document.querySelector("#btn1");
+        var oBtn2 = document.querySelector("#btn2");
+        var oBtn3 = document.querySelector("#btn3");
+        var oRemove = document.querySelector("#remove");
+
+
+
+
+        function fun(){
+        	alert("fun click")
+        }
+        oBtn1.onclick=function(){
+        	alert("frist click")
+        }
+        oBtn1.onclick=function(){
+        	alert("second click")  //覆盖第一个
+        }
+
+        oBtn2.addEventListener("click",function(){
+        	alert("frist click")
+        },false)
+        oBtn2.addEventListener("click",function(){
+        	alert("second click")
+        },false)
+
+        oBtn3.addEventListener("click",fun,false)
+
+        oRemove.addEventListener("click",function(){
+        	oBtn3.removeEventListener("click",fun,false)  //移除的必须是命名函数
+        	alert("btn3事件已经移除")
+        },false)
+
+	</script>
+</body>
+</html>

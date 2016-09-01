@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//arguments(实参是一位时是平方，两位是乘机)
+		function arguments(){
+			if(arguments.length===1){
+				return arguments[0] * arguments[0];
+			}else if(arguments.length===2){
+				return arguments[0] * arguments[1];
+			}
+		}
+		var result=arguments(5,6)
+		console.log(result)
+	</script>
+</body>
+</html>

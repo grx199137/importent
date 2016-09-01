@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<input type="text" id="txt1">
+		<input type="text" id="txt0">
+		<input type="text" id="txt2">=
+		<input type="text" id="txt3">
+		<input type="button" value="结果" id="but">
+	</form>
+	<script src="script/jquery.js"></script>
+	<script>
+	    
+	    $("#but").click(function(){
+	    	var txt1 = $("#txt1").val();
+	        var txt2 = $("#txt2").val();
+	        var txt0 = $("#txt0").val();
+	        switch(txt0){
+	        	case "+":var result = Number(txt1) + Number(txt2);break;
+	        	case "-":var result = Number(txt1) - Number(txt2);break;
+	        	case "*":var result = Number(txt1) * Number(txt2);break;
+	        	case "/":var result = Number(txt1) / Number(txt2);break;
+	        }
+            // if(txt0=="+"){
+            // 	 var result = Number(txt1) + Number(txt2);   
+            // };
+            // if(txt0=="-"){
+            // 	 var result = Number(txt1) - Number(txt2);   
+            // };
+            // if(txt0=="*"){
+            // 	 var result = Number(txt1) * Number(txt2);   
+            // };
+            // if(txt0=="/"){
+            // 	 var result = Number(txt1) / Number(txt2);     //if与switch同样作用
+            // };
+	        $("#txt3").val(result);
+	    });
+	</script>
+</body>
+</html>

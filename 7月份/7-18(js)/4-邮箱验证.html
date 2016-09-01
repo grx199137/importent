@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+
+</head>
+<body>
+	<input type="text" id="txt">
+	<p id="info"></p>
+	<script src="script/jquery.js"></script>
+	<script>
+	    var re = /^[0-9a-zA-Z\_]{6,11}\@qq\.com$/;
+        $("#txt").blur(function(){
+        	var value = $(this).val();               
+        	var result = re.test(value);
+
+        	$("#info").html(checkinput(result));
+
+        });
+        function checkinput(bool){
+                var rightSpan = "<span>输入正确</span>";
+                var wrongSpan = "<span>请重新输入</span>";
+        	if(bool){                                           
+                        return rightSpan;
+                }else{
+                        return wrongSpan;     
+                }
+        }
+	</script>
+</body>
+</html>

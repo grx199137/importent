@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+	<form id="myform">
+		<input type="text" name="number">
+		<input type="text" name="name">
+		<button>登陆</button>
+	</form>
+</body>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$("#myform").submit(function(){
+			var data = $(this).serialize();
+			$.ajax({
+				"method":"post",
+				"url":"/home",
+				"data":data
+			}).done(function(data){
+				alert(data)
+			}).fail(function(){
+				alert("请求失败")
+			})
+			return false;
+		})	
+	</script>
+</html>

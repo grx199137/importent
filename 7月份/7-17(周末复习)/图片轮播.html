@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box{
+		width: 650px;
+		height: 420px;
+		overflow: hidden;
+	}
+	.box .small-box {
+		width: 3282px;
+	}
+	#num li{
+		list-style: none;
+		float: left;
+		border: 1px solid red;
+		width: 50px;
+		height: 30px;
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="small-box">
+			<img src="images/0.jpg" alt="">
+			<img src="images/1.jpg" alt="">
+			<img src="images/2.jpg" alt="">
+			<img src="images/3.jpg" alt="">
+			<img src="images/4.jpg" alt="">
+		</div>
+	</div>
+	<ul id="num">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+        $("#num li").click(function(){
+        	var index = $(this).index();
+        	var margin = -650 * index;
+        	$(".small-box").animate({"margin-left":margin},500);
+        });
+	</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		html,body{
+			overflow: hidden;
+			background-image: url(images/bg.png);
+		}
+		@keyframes mypic1{
+			10%{
+				transform:translate(50px);
+				transform:translate(-50px);;
+			}
+		}
+		.box{
+			width: 130%;
+			height: 108px;
+			background-image: url(images/wave1.png);
+			animation:mypic1 5s linear infinite;
+			position: absolute;
+			bottom: 0px;
+			z-index: 100;
+		}
+		@keyframes mypic2{
+			15%{
+				transform:translate(50px);
+				transform:translate(-50px);;
+			}
+		}
+		.box1{
+			width: 130%;
+			height: 108px;
+			background-image: url(images/wave2.png);
+			animation:mypic2 4s linear infinite;
+			position: absolute;
+			bottom: 50px;
+			z-index: 10;
+		}
+		@keyframes mypic3{
+			16%{
+				transform:translate(-50px);;
+			}
+		}
+		.box2{
+			width: 130%;
+			height: 108px;
+			background-image: url(images/wave3.png);
+			animation:mypic3 3s linear infinite;
+			position: absolute;
+			bottom: 100px;
+			z-index: 1;
+		}
+		@keyframes fount{
+			50%{
+				transform:rotate(10deg);
+			}
+		}
+		#fount{
+			position: absolute;
+			bottom: 76px;
+			left:350px;
+			z-index: 8;
+			animation:fount 3s linear infinite;
+		}
+		@keyframes yu{
+			25%{
+				transform:rotate(-30deg);
+				bottom:230px;
+				left:370px;
+			}
+			50%{
+				transform:rotate(30deg);
+				bottom:40px;
+				left:570px;
+			}
+			75%{
+				transform:rotate(-30deg);
+				bottom:230px;
+				left:770px;
+			}
+			100%{
+				transform:rotate(30deg);
+				bottom:40px;
+				left:970px;
+			}
+
+		}
+		#yu{
+			position: absolute;
+			bottom: 88px;
+			left:300px;
+			z-index: 8;
+			animation:yu 8s linear infinite;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>			
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<img id="fount" src="images/chuan.png" alt="">
+	<img id="yu" src="images/yu.png" alt="">
+</body>
+</html>

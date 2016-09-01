@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+	<h1>你好好好好</h1>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$.ajax({
+			method:"get",
+			"url":"http://192.168.3.123:1000/table"
+			"dataType":"jsonp"
+		}).done(function(data){
+			console.log(data)
+		}).fail(function(){
+			console.log("请求失败")
+		})
+	</script>
+</body>
+</html>

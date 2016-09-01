@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="按钮1" class="btn">
+	<input type="button" value="按钮2" class="btn">
+	<input type="button" value="按钮3" class="btn">
+	<script>
+
+		function $(selector){
+			return $.prototype.init(selector);
+		}
+
+		$.prototype= {
+			init : function(selector){
+				this.dom= document.querySelectorAll(selector);
+				return this;
+			},
+			click : function(fun){
+				for(var i=0;i<this.dom.length;i++){
+					this.dom[i].addEventListener("click",fun,false);
+				}
+			},
+			attr : function(){
+				if(arguments.length===1){
+					this.dom[arguments[0]];
+				}else if(arguments.length===2){
+					for(var i=0;i<this.dom.length;i++){
+						this.dom[i][arguments[0]]=arguments[1]
+					}
+				}
+			}
+		}
+
+
+		$(".btn").attr("value","测试按钮");
+
+
+	</script>
+</body>
+</html>

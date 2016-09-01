@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+        var cat = {
+        	name : "miaomiao",
+        	age : 2,
+        	sayName :function(){    //属性里有函数时这种就是对象中的方法
+        		alert(this.name)
+        	},
+        	sayHello :function(){
+        		var result = "大家好，我是" + this.name + "今年" + this.age + "岁了";
+        		alert(result);
+        	}
+        };
+        // cat.sayName();  //调用对象(cat)中方法
+        cat.name = "大傻";
+        cat.sayHello();
+	</script>
+</body>
+</html>

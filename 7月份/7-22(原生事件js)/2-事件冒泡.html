@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+        *{
+        	margin: 0px;
+        	padding: 0px;
+        }
+        .box{
+        	width: 300px;
+        	height: 300px;
+        	background-color: yellow;
+        }
+        .box .center-box{
+        	width: 200px;
+        	height: 200px;
+        	background-color: blue;
+        }
+        .box .small-box{
+        	width: 100px;
+        	height: 100px;
+        	background-color: red;
+        }
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="center-box">
+			<div class="small-box"></div>
+		</div>
+	</div>
+	<script>
+        var oBox = document.querySelector(".box");
+        var oCenter = document.querySelector(".center-box");
+        var oSmall = document.querySelector(".small-box");
+        
+
+
+        //事件冒泡      
+        oBox.addEventListener("click",function(){
+                alert("大盒子")
+        },false)
+        oCenter.addEventListener("click",function(){
+                alert("中盒子")
+        },false)
+        oSmall.addEventListener("click",function(){
+                alert("小盒子")
+                event.stopPropagation()   //停止冒泡
+        },false)
+	</script>
+</body>
+</html>

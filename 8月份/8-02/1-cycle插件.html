@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+		.box{
+			width: 650px;
+			height: 420px;
+		}
+		.list{
+			position: absolute;
+			top:390px;
+			left:450px;
+			z-index: 77;
+		}
+		.list li{
+			list-style: none;
+			border: 1px solid gray;
+			width: 20px;
+			line-height: 20px;
+			height: 20px;
+			float:left;
+			text-align: center;
+			cursor: pointer;
+		}
+		.list .active{
+			background-color:red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="num-list">
+			<li><img src="images/0.jpg" alt=""></li>
+			<li><img src="images/1.jpg" alt=""></li>
+			<li><img src="images/2.jpg" alt=""></li>
+			<li><img src="images/3.jpg" alt=""></li>
+			<li><img src="images/4.jpg" alt=""></li>
+		</ul>
+	</div>
+	<ul class="list">
+		<li class="active">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<input type="button" value="上一张" id="up">
+	<input type="button" value="下一张" id="down">
+	<script src="script/jquery.js"></script>
+	<script src="script/jquery.cycle.all.js."></script>
+	<script>
+		$(".list li").click(function(){
+			var index = $(this).index();
+			$(".num-list").cycle(index);
+			$(this).addClass("active").siblings().removeClass("active");
+		});
+		$("#up").click(function(){
+			$(".num-list").cycle("prev");
+		});
+		$("#down").click(function(){
+			$(".num-list").cycle("next");
+		});
+		$(".num-list").cycle({
+			fx:"slideY",
+			spped: 200,
+			before:function(){
+				var index = $(this).index();
+				$(".list li").eq(index).addClass("active").siblings().removeClass("active");
+			}
+		});
+
+	</script>
+</body>
+</html>

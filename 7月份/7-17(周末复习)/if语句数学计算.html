@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="num1">
+	<input type="text" id="sign">
+	<input type="text" id="num2">=
+	<input type="text" id="num3">
+	<input type="button" value="连接" id="btn">
+	<script src="script/jquery.js"></script>
+	<script>
+        $("#btn").click(function(){
+        	var num1 = $("#num1").val();
+        	var num2 = $("#num2").val();
+        	var sign = $("#sign").val();
+        	switch(sign){
+        		case "+" : var result = Number(num1) + Number(num2); break;
+        		case "-" : var result = Number(num1) - Number(num2); break;
+        		case "*" : var result = Number(num1) * Number(num2); break;
+        		case "/" : var result = Number(num1) / Number(num2); break;
+        	};
+        	$("#num3").val(result);
+        });
+	</script>
+</body>
+</html>

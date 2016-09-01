@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		function fun(x){
+			if(x===1){
+				return x;
+			}else{
+				return x * fun(x-1);
+			}
+		}
+		var result=fun(4);
+		console.log(result);
+		//递归函数(在一个函数本身里在调用这个函数)
+
+	</script>
+</body>
+</html>

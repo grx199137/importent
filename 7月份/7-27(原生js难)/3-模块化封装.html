@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="add">+</button>
+	<button id="sub">-</button>
+	<script>
+	    //封装 ()()立即执行函数的方法
+		var count = (function(){
+			var n =0
+			var price = 3.14;
+			function addFun(){
+				n++
+				var total = (n*price).toFixed(2);
+				console.log(total);
+			}
+			function subFun(){
+				n--
+				var total = (n*price).toFixed(2);
+				console.log(total)
+			}
+			return{
+				add:addFun,
+				sub:subFun       //return {}其实就是对外的接口
+			}
+				
+		})()
+
+		document.querySelector("#add").onclick=count.add;
+		document.querySelector("#sub").onclick=count.sub;
+
+	</script>
+		
+
+</body>
+</html>

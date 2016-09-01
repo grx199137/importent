@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+        .green{
+        	color: green;
+        }
+        .red{
+        	color: red;
+        }
+	</style>
+</head>
+<body>
+	<form action="">
+		<label for="">日期</label>
+		<input type="text" id="txt">
+	</form>
+	<p class="info"></p>
+	<script src="script/jquery.js"></script>
+	<script>
+	    var re = /^([0-9]{4})\_([0-9]{2})\_([0-9]{2})$/
+        $("#txt").blur(function(){
+            var value = $(this).val();
+            var result = re.exec(value);
+            $(".info").html(gitDate(result));
+        });
+        function gitDate(result){
+        	if(result==null){
+        		var content = "<span class='red'>格式错误</span>";
+        		return content;
+        	}else{
+                var content = "<span class='green'>您输入的格式是"+result[1]+"年,"+result[2]+"月,"+result[3]+"日.</span>";
+                return content;
+        	}
+
+        }
+	</script>
+</body>
+</html>

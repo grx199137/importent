@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<audio id="music" src="audio/yanyuan.mp3" loop controls></audio>
+	<button id="play">播放</button>
+	<script>
+		var music = document.querySelector("#music");
+		var play = document.querySelector("#play")
+		play.onclick = function(){
+			if(music.paused){
+				music.play()
+				play.innerHTML="暂停"
+			}else{
+				music.pause();
+				play.innerHTML="播放"
+			}
+		}
+	</script>
+</body>
+</html> 

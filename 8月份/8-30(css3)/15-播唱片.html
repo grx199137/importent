@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		@keyframes myanima{
+			100%{
+				transform:rotate(360deg);
+			}
+		}
+		.box{
+			width: 390px;
+			height: 390px;
+			animation:myanima 5s linear infinite;
+		}
+		.move{
+			animation-play-state:paused;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">	
+		<img src="images/record.png" alt="">
+	</div>
+	<audio id="music" src="audio/yanyuan.mp3"></audio>
+	<script src="script/jquery.js"></script>
+	<script>
+		var music = document.querySelector("#music");
+		$(".box").click(function(){
+			if(music.paused){
+				music.play();
+				$(this).addClass("box").removeClass("move")
+			}else{
+				music.pause();
+				$(this).addClass("move").removeClass("box")
+			}
+		})
+
+	</script>
+</body>
+</html>

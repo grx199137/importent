@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	   var cat = {
+        	name : "miaomiao",
+        	age : 2,
+        	sayName :function(){    //属性里有函数时这种就是对象中的方法
+        		alert(this.name)
+        		return this;
+        	},
+        	sayHello :function(){
+        		var result = "大家好，我是" + this.name + "今年" + this.age + "岁了";
+        		alert(result);
+        		return this;
+        	},
+        	count :function(num1,num2,sign){
+        		var result = 0;
+        		switch(sign){
+        			case "+" : var result = num1 + num2 ; break;
+        			case "-" : var result = num1 - num2 ; break;
+        			case "*" : var result = num1 * num2 ; break;
+        			case "/" : var result = num1 / num2 ; break;
+        		}
+        		var content = num1 +sign+ num2 + "计算的结果是" +result ;
+        		alert(content);
+        	}
+        };
+        cat.sayName().sayHello().count(3,4,"+");
+	</script>
+</body>
+</html>

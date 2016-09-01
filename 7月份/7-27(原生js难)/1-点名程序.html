@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="点击" id="btn">
+	<script>
+
+		var personArr = [
+							"卡特",
+							"男枪",
+							"皇子",
+							"鳄鱼",
+							"小丑",
+							"火男"
+									];
+		//用数组的方法随机点名程序
+		var oBtn =document.querySelector("#btn");
+		var arr = [];
+		oBtn.onclick=setPerson;
+
+		function setPerson(){
+			var num = Math.floor(Math.random() * personArr.length);
+			var person = personArr[num];
+			if(arr.length<personArr.length){
+				for(var i=0;i<personArr.length;i++){
+					if(arr[i]===person){
+						setPerson();
+						return;
+					}
+				}
+				arr.push(person);
+				console.log(person);
+			}
+		}
+	</script>
+</body>
+</html>
